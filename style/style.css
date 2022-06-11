@@ -8,7 +8,7 @@
 
 body {
   background-color: black;
-  color: white;
+  color: #d6d6d6;
   width: 100%;
   height: 100vh;
   font-family: "input-sans-narrow", sans-serif;
@@ -82,9 +82,53 @@ body #principal .mobileHeader ul li a {
   color: white;
 }
 
+body #principal .scroll {
+  position: fixed;
+  right: 16px;
+  bottom: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-family: "input-sans-narrow", sans-serif;
+  z-index: 900;
+}
+
+body #principal .scroll .scroll1 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  width: 30px;
+}
+
+body #principal .scroll .scroll1 hr {
+  width: 0px;
+  border: solid 1px #feda4e;
+}
+
+body #principal .scroll .scroll2 h3 {
+  pointer-events: none;
+  font-weight: 100;
+}
+
+body #principal .scroll .scroll3 {
+  width: 30px;
+}
+
+body #principal .scroll .scroll3 hr {
+  width: 30px;
+  border: solid 1px #feda4e;
+}
+
 body #principal .home {
-  background: #2a2a2a;
-  background: linear-gradient(175deg, #202020 0%, #131313 27%, #0d0d0d 53%, #0d0d0d 77%);
+  background: #202020;
   width: 100%;
   height: 100vh;
   display: -webkit-box;
@@ -126,18 +170,47 @@ body #principal .home header .logo a {
   text-align: center;
   position: relative;
   font-family: "Heebo";
+  -webkit-transition: text-shadow .5s ease-in-out;
+  transition: text-shadow .5s ease-in-out;
 }
 
 body #principal .home header .logo a .puntos {
   position: absolute;
   -webkit-transform: translateX(5px) rotate(90deg);
           transform: translateX(5px) rotate(90deg);
-  -webkit-transition: text-shadow 0.5s ease-in-out;
-  transition: text-shadow 0.5s ease-in-out;
+  color: #feda4e;
+}
+
+body #principal .home header .logo a:hover {
+  text-shadow: 0px 0px 5px black;
 }
 
 body #principal .home header .logo a:hover .puntos {
-  text-shadow: red -2px 0, cyan 2px 0;
+  text-shadow: none;
+  -webkit-animation: puntos 0.6s ease-in-out both;
+          animation: puntos 0.6s ease-in-out both;
+}
+
+@-webkit-keyframes puntos {
+  0% {
+    -webkit-transform: rotate(0) translateY(0px);
+            transform: rotate(0) translateY(0px);
+  }
+  100% {
+    -webkit-transform: rotate(450deg) translateY(-5px);
+            transform: rotate(450deg) translateY(-5px);
+  }
+}
+
+@keyframes puntos {
+  0% {
+    -webkit-transform: rotate(0) translateY(0px);
+            transform: rotate(0) translateY(0px);
+  }
+  100% {
+    -webkit-transform: rotate(450deg) translateY(-5px);
+            transform: rotate(450deg) translateY(-5px);
+  }
 }
 
 body #principal .home header .menu .toggleHeader {
@@ -158,17 +231,12 @@ body #principal .home header .menu ul li {
 
 body #principal .home header .menu ul li a {
   text-decoration: none;
-  color: white;
+  color: #feda4e;
   font-family: "input-sans-narrow", sans-serif;
   font-size: 1rem;
   font-weight: 200;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-}
-
-body #principal .home header .menu ul li a:hover {
-  text-shadow: red -2px 0, cyan 2px 0;
-  font-weight: 400;
 }
 
 body #principal .home .front {
@@ -213,7 +281,7 @@ body #principal .home .front .front2 h1 {
   font-size: 10rem;
   line-height: 0.8;
   margin: auto;
-  text-shadow: 0px 0px 30px black;
+  text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   -webkit-transition: text-shadow 1s ease-in-out;
   transition: text-shadow 1s ease-in-out;
   font-family: "Heebo";
@@ -225,6 +293,7 @@ body #principal .home .front .front2 h1 .spanFront {
   bottom: 55px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  color: #feda4e;
 }
 
 body #principal .home .front .front2 h1 .spanFront .frontPunto1 {
@@ -280,14 +349,16 @@ body #principal .home .front .front2 h1 .spanFront .frontPunto2 {
   }
 }
 
-body #principal .home .front .front2 h1:hover {
-  text-shadow: red -4px 1px, cyan 4px 1px;
+body #principal .home .front .front2:hover ~ .front3 {
+  color: #feda4e;
 }
 
 body #principal .home .front .front3 {
   margin-left: 400px;
   margin-top: 1rem;
   pointer-events: fill;
+  -webkit-transition: color .5s ease-in;
+  transition: color .5s ease-in;
 }
 
 body #principal .home .front .front3 h3 {
@@ -318,7 +389,7 @@ body #principal .home #social ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 10px;
+  gap: 16px;
 }
 
 body #principal .home #social ul li {
@@ -326,12 +397,9 @@ body #principal .home #social ul li {
 }
 
 body #principal .home #social ul li a {
-  color: white;
+  color: #d6d6d6;
   overflow: hidden;
-}
-
-body #principal .home #social ul li a:hover i {
-  text-shadow: red -2px 0, cyan 2px 0;
+  font-size: 1.2rem;
 }
 
 body #principal .home #social ul li a i {
@@ -340,13 +408,15 @@ body #principal .home #social ul li a i {
   font-size: 1.5rem;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
+  color: #feda4e;
 }
 
 body #principal .home #social ul li a span {
   position: absolute;
   overflow: hidden;
-  height: 30px;
+  height: 20px;
   width: 100px;
+  font-size: 1.2rem;
 }
 
 body #principal .home #social ul li a span .socialspan {
@@ -361,80 +431,285 @@ body #principal .home #social ul li a:hover .socialspan {
           transform: translateX(10px);
 }
 
-body #principal .scroll {
-  position: fixed;
-  right: 16px;
-  bottom: 6rem;
+body #principal #about {
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  position: relative;
+  scroll-snap-align: start;
+  background: #202020;
+  background: -webkit-gradient(linear, left top, left bottom, from(#202020), to(#0d0d0d));
+  background: linear-gradient(180deg, #202020 0%, #0d0d0d 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #principal #about .aboutTittle {
+  width: 100%;
+  top: 0;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  margin-top: 2%;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 {
+  width: 70%;
+  text-align: center;
+  font-size: 12vw;
+  color: transparent;
+  text-shadow: 0px 0px 1px rgba(150, 150, 150, 0.5);
+  background-clip: text;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 span {
+  -webkit-transition: color .5s ease-in-out;
+  transition: color .5s ease-in-out;
+  color: transparent;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #aa:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #bb:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #oo:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #uu:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #tt:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #mm:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutTittle .aboutTittleh2 #ee:hover {
+  color: #feda4e;
+}
+
+body #principal #about .aboutContainer {
+  position: relative;
+  z-index: 10;
+  width: 1500px;
+  height: 650px;
+  margin-top: 10%;
+  background-color: #202020;
+  -webkit-box-shadow: 1px -5px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px -5px 30px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'about skills' 'about what';
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 35% 64%;
+      grid-template-columns: 35% 64%;
+  gap: 16px;
+}
+
+body #principal #about .aboutContainer .desc {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: about;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 10px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  pointer-events: none;
-  font-family: "input-sans-narrow", sans-serif;
-  z-index: 900;
 }
 
-body #principal .scroll .scroll1 {
+body #principal #about .aboutContainer .desc img {
+  border-radius: 50%;
+  border: 2px solid #feda4e;
+  margin-bottom: 2rem;
+}
+
+body #principal #about .aboutContainer .desc p {
+  text-align: center;
+  width: 90%;
+}
+
+body #principal #about .aboutContainer .desc ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+}
+
+body #principal #about .aboutContainer .desc ul li {
+  list-style: none;
+}
+
+body #principal #about .aboutContainer .desc ul li a i {
+  font-size: 2rem;
+  color: #feda4e;
+}
+
+body #principal #about .aboutContainer .skills {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: skills;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #principal #about .aboutContainer .skills h2 {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-  width: 30px;
+  text-align: center;
+  font-size: 4rem;
+  margin-right: 1rem;
 }
 
-body #principal .scroll .scroll1 hr {
-  width: 0px;
+body #principal #about .aboutContainer .skills .skillContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 150px 150px;
+      grid-template-rows: 150px 150px;
+  -ms-grid-columns: 150px 150px 150px;
+      grid-template-columns: 150px 150px 150px;
+  gap: 15px;
+  padding: 1rem;
 }
 
-body #principal .scroll .scroll2 h3 {
-  font-weight: 100;
+body #principal #about .aboutContainer .skills .skillContainer .skill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #feda4e;
 }
 
-body #principal .scroll .scroll3 {
-  width: 30px;
+body #principal #about .aboutContainer .skills .skillContainer .skill i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #202020;
 }
 
-body #principal .scroll .scroll3 hr {
-  width: 30px;
+body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+  color: #202020;
 }
 
-body #principal .scroll .titilar {
-  -webkit-animation-name: titilar;
-          animation-name: titilar;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+body #principal #about .aboutContainer .what {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: what;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@-webkit-keyframes titilar {
-  0% {
-    width: 30px;
-  }
-  50% {
-    width: 40px;
-  }
-  100% {
-    width: 30px;
-  }
+body #principal #about .aboutContainer .what h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes titilar {
-  0% {
-    width: 30px;
-  }
-  50% {
-    width: 40px;
-  }
-  100% {
-    width: 30px;
-  }
+body #principal #about .aboutContainer .what .whatContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #principal #about .aboutContainer .what .whatContainer .service {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #principal #about .aboutContainer .what .whatContainer .service i {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #feda4e;
+}
+
+body #principal #about .aboutContainer .what .whatContainer .service h3 {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+body #principal #about .aboutContainer .what .whatContainer .service p {
+  width: 90%;
+  font-size: .8rem;
+  text-align: center;
 }
 
 body #principal #projects {
@@ -500,7 +775,7 @@ body #principal #projects .projectsTittle .projectsTittleh2 {
   text-align: center;
   font-size: 12vw;
   color: transparent;
-  text-shadow: 0px 0px 1px rgba(49, 49, 49, 0.5);
+  text-shadow: 0px 0px 1px rgba(150, 150, 150, 0.5);
   background-clip: text;
 }
 
@@ -511,35 +786,35 @@ body #principal #projects .projectsTittle .projectsTittleh2 span {
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #p:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #r:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #o:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #j:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #e:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #c:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #t:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projectsTittle .projectsTittleh2 #s:hover {
-  color: rgba(173, 216, 230, 0.582);
+  color: #feda4e;
 }
 
 body #principal #projects .projects-container {
@@ -597,6 +872,7 @@ body #principal #projects .projects-container .btns-mov-carrousel .btn-carrousel
 
 body #principal #projects .projects-container .btns-mov-carrousel .btn-carrousel i {
   font-size: 2rem;
+  color: #feda4e;
 }
 
 body #principal #projects .projects-container .btns-mov-carrousel .btn-carrousel:hover {
@@ -649,7 +925,6 @@ body #principal #projects .card .img-card .imgHover .hoverLi a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
   text-decoration: none;
   z-index: 600;
   cursor: pointer;
@@ -662,6 +937,7 @@ body #principal #projects .card .img-card .imgHover .hoverLi a i {
   transition: -webkit-filter .5s ease-in-out;
   transition: filter .5s ease-in-out;
   transition: filter .5s ease-in-out, -webkit-filter .5s ease-in-out;
+  color: #feda4e;
 }
 
 body #principal #projects .card .img-card .imgHover .hoverLi h3 {
@@ -675,11 +951,10 @@ body #principal #projects .card .img-card .imgHover .hoverLi h3 {
           transform: translateY(-10px);
   pointer-events: none;
   text-align: center;
-  color: #b9eeff;
+  color: #d6d6d6;
 }
 
 body #principal #projects .card .img-card .imgHover .hoverLi:hover {
-  color: #b9eeff;
   -webkit-filter: drop-shadow(0px 0px 20px black);
           filter: drop-shadow(0px 0px 20px black);
 }
@@ -721,6 +996,7 @@ body #principal #projects .card .info-card h2 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   text-shadow: 0px 0px 40px #363636;
+  color: #feda4e;
 }
 
 body #principal #projects .card .info-card p {
@@ -732,6 +1008,7 @@ body #principal #projects .card .info-card p {
 
 body #principal #projects .card .info-card .technologies h2 {
   font-size: 1rem;
+  color: #d6d6d6;
 }
 
 body #principal #projects .card .info-card .used {
@@ -915,13 +1192,162 @@ body #principal #projects .card-right-non::before {
   z-index: 1000;
 }
 
+@media screen and (max-width: 1600px) {
+  body #principal #about .aboutContainer {
+    width: 1200px;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 3.5rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 120px 120px;
+        grid-template-rows: 120px 120px;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .what {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: what;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    font-size: .9rem;
+  }
+}
+
 @media screen and (max-width: 1366px) {
+  body #principal #about .aboutContainer {
+    width: 1200px;
+    height: 580px;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 3.2rem;
+    margin-right: 3rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 120px 120px;
+        grid-template-rows: 120px 120px;
+    -ms-grid-columns: 130px 130px 130px;
+        grid-template-columns: 130px 130px 130px;
+    padding: 0rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill i {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .what {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: what;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    font-size: .9rem;
+  }
   body #principal #projects .projects-container {
     min-height: 500px;
   }
 }
 
 @media screen and (max-width: 1280px) {
+  body #principal #about .aboutContainer {
+    width: 1100px;
+    height: 520px;
+  }
+  body #principal #about .aboutContainer .desc {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+  body #principal #about .aboutContainer .desc img {
+    width: 150px;
+  }
+  body #principal #about .aboutContainer .desc p {
+    font-size: .9rem;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 2.8rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 100px 100px;
+        grid-template-rows: 100px 100px;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .what {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: what;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    font-size: .9rem;
+  }
   body #principal #projects .projects-container {
     min-height: 450px;
   }
@@ -930,6 +1356,183 @@ body #principal #projects .card-right-non::before {
   }
   body #principal #projects .projects-container .card .img-card img {
     width: 300px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body #principal #about .aboutContainer {
+    position: relative;
+    z-index: 10;
+    width: 900px;
+    height: 1000px;
+    margin-top: 0;
+    padding: 2rem;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'about' 'skills' 'what';
+    -ms-grid-rows: 200px 1fr 1fr;
+        grid-template-rows: 200px 1fr 1fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    gap: 32px;
+  }
+  body #principal #about .aboutContainer .desc {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'photo p' 'photo  nav';
+    -ms-grid-columns: 1fr 70%;
+        grid-template-columns: 1fr 70%;
+    -ms-grid-rows: 80% 1fr;
+        grid-template-rows: 80% 1fr;
+    width: 100%;
+  }
+  body #principal #about .aboutContainer .desc img {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: photo;
+    width: 180px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  body #principal #about .aboutContainer .desc p {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: p;
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  body #principal #about .aboutContainer .desc nav {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: nav;
+  }
+  body #principal #about .aboutContainer .desc nav ul {
+    margin-top: 0;
+  }
+  body #principal #about .aboutContainer .desc nav ul li a {
+    height: 100%;
+  }
+  body #principal #about .aboutContainer .desc nav ul li a i {
+    font-size: 2.5rem;
+  }
+  body #principal #about .aboutContainer .skills {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 4rem;
+    margin-right: 1rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 150px 150px;
+        grid-template-rows: 150px 150px;
+    -ms-grid-columns: 150px 150px 150px;
+        grid-template-columns: 150px 150px 150px;
+  }
+  body #principal #about .aboutContainer .what {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 3.7rem;
+    margin-bottom: 0;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  body #principal #about .aboutContainer {
+    width: 960px;
+    height: 520px;
+        grid-template-areas: 'about skills' 'about what';
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 30% 68%;
+        grid-template-columns: 30% 68%;
+  }
+  body #principal #about .aboutContainer .desc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body #principal #about .aboutContainer .desc img {
+    width: 150px;
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  body #principal #about .aboutContainer .desc p {
+    font-size: .8rem;
+    margin-bottom: 1rem;
+  }
+  body #principal #about .aboutContainer .desc nav ul li a i {
+    font-size: 1.5rem;
+  }
+  body #principal #about .aboutContainer .skills {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 100px 100px;
+        grid-template-rows: 100px 100px;
+    -ms-grid-columns: 120px 120px 120px;
+        grid-template-columns: 120px 120px 120px;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+    font-size: 1rem;
+    color: #202020;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service i {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    font-size: .8rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service p {
+    font-size: .7rem;
   }
 }
 
@@ -962,6 +1565,40 @@ body #principal #projects .card-right-non::before {
   }
   body #principal #projects .projects-container .card .info-card .used i {
     font-size: 1rem;
+  }
+  body #principal #about .aboutContainer {
+    width: 720px;
+    height: 900px;
+  }
+  body #principal #about .aboutContainer .desc img {
+    width: 150px;
+  }
+  body #principal #about .aboutContainer .desc p {
+    font-size: 1rem;
+  }
+  body #principal #about .aboutContainer .desc nav ul li a i {
+    font-size: 1.5rem;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 3rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 120px 120px;
+        grid-template-rows: 120px 120px;
+    -ms-grid-columns: 120px 120px 120px;
+        grid-template-columns: 120px 120px 120px;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 2.5rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service i {
+    font-size: 2rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    font-size: .9rem;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service p {
+    font-size: .8rem;
   }
 }
 
@@ -1007,6 +1644,10 @@ body #principal #projects .card-right-non::before {
     -webkit-transform: translateY(0);
             transform: translateY(0);
     pointer-events: all;
+    -webkit-transition: border-radius 1s ease-in-out, opacity 1s linear, -webkit-transform 1s ease-in-out;
+    transition: border-radius 1s ease-in-out, opacity 1s linear, -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out, border-radius 1s ease-in-out, opacity 1s linear;
+    transition: transform 1s ease-in-out, border-radius 1s ease-in-out, opacity 1s linear, -webkit-transform 1s ease-in-out;
   }
   body #principal .home header .menu ul {
     display: none;
@@ -1091,9 +1732,59 @@ body #principal #projects .card-right-non::before {
             transform: translate(0);
     opacity: 1;
   }
+  body #principal #about .aboutContainer {
+    width: 600px;
+    height: 850px;
+    -ms-grid-rows: 180px 220px 1fr;
+        grid-template-rows: 180px 220px 1fr;
+    margin-top: 2rem;
+  }
+  body #principal #about .aboutContainer .desc {
+    -ms-grid-rows: 80% 1fr;
+        grid-template-rows: 80% 1fr;
+    height: 180px;
+  }
+  body #principal #about .aboutContainer .desc img {
+    width: 130px;
+  }
+  body #principal #about .aboutContainer .desc p {
+    font-size: .9rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 100px 100px;
+        grid-template-rows: 100px 100px;
+    -ms-grid-columns: 100px 100px 100px;
+        grid-template-columns: 100px 100px 100px;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill i {
+    font-size: 2.5rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+    font-size: 1rem;
+  }
+  body #principal #about .aboutContainer .what {
+    display: block;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  body #principal #about .aboutContainer .what .whatContainer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    margin-top: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 576px), (max-height: 450px) {
+  body #principal .scroll {
+    display: none;
+  }
   body #principal .mobileHeader ul li a {
     font-size: 1.5rem;
   }
@@ -1154,34 +1845,104 @@ body #principal #projects .card-right-non::before {
   body #principal .home #social ul li a i {
     font-size: 1rem;
   }
-  body #principal .scroll {
-    right: -45px;
-    bottom: 4rem;
+  body #principal #about .aboutTittle {
+    margin-top: 25px;
   }
-  body #principal .scroll .scroll2 h3 {
-    font-size: .8rem;
+  body #principal #about .aboutContainer {
+    width: 350px;
+    height: 530px;
+    padding: .5rem;
+    margin-top: 4rem;
+        grid-template-areas: 'about' 'skills' 'what';
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 150px 150px 1fr;
+        grid-template-rows: 150px 150px 1fr;
+    gap: 0;
   }
-  @-webkit-keyframes titilar {
-    0% {
-      width: 10px;
-    }
-    50% {
-      width: 20px;
-    }
-    100% {
-      width: 10px;
-    }
+  body #principal #about .aboutContainer .desc {
+    display: -ms-grid;
+    display: grid;
+    height: 150px;
+        grid-template-areas: 'photo p' 'nav p';
+    -ms-grid-rows: 70% 1fr;
+        grid-template-rows: 70% 1fr;
   }
-  @keyframes titilar {
-    0% {
-      width: 10px;
-    }
-    50% {
-      width: 20px;
-    }
-    100% {
-      width: 10px;
-    }
+  body #principal #about .aboutContainer .desc img {
+    width: 80px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  body #principal #about .aboutContainer .desc p {
+    font-size: 10px;
+    margin-bottom: 0;
+    width: 90%;
+    margin: auto;
+  }
+  body #principal #about .aboutContainer .desc nav ul {
+    gap: 1rem;
+  }
+  body #principal #about .aboutContainer .desc nav ul li a i {
+    font-size: 1rem;
+  }
+  body #principal #about .aboutContainer .skills h2 {
+    font-size: 2rem;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer {
+    -ms-grid-rows: 62px 62px;
+        grid-template-rows: 62px 62px;
+    -ms-grid-columns: 62px 62px 62px;
+        grid-template-columns: 62px 62px 62px;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  body #principal #about .aboutContainer .skills .skillContainer .skill h3 {
+    font-size: .6rem;
+  }
+  body #principal #about .aboutContainer .what h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    margin-top: 14px;
+  }
+  body #principal #about .aboutContainer .what .whatContainer {
+    margin-top: 16px;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'i p' 'h3 p';
+    -ms-grid-rows: 40% 1fr;
+        grid-template-rows: 40% 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service i {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: i;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service h3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: h3;
+    text-align: center;
+    font-size: 8px;
+    margin-bottom: 0;
+  }
+  body #principal #about .aboutContainer .what .whatContainer .service p {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: p;
+    font-size: 8px;
   }
   body #principal #projects .projectsTittle {
     margin-top: 15%;
@@ -1213,6 +1974,9 @@ body #principal #projects .card-right-non::before {
 }
 
 @media screen and (max-height: 450px) {
+  body #principal .scroll {
+    display: none;
+  }
   body #principal .home .front {
     margin: auto;
   }

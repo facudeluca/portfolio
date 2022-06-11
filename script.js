@@ -25,13 +25,16 @@ entradas.forEach(entrada =>{
         if (id ==='home'){
             hrUp.style.width='0'+'px';
             hrDown.style.width='30'+'px';
-            hrUp.classList.remove('titilar')
-            hrDown.classList.add('titilar')
+            hrDown.style.cursor='pointer';
         }else if (id ==='projects'){
             hrUp.style.width='30'+'px';
+            hrUp.style.cursor='pointer';
             hrDown.style.width='0'+'px';
-            hrUp.classList.add('titilar')
-            hrDown.classList.remove('titilar')
+        }else if(id === 'about'){
+            hrUp.style.width='30'+'px';
+            hrDown.style.width='30'+'px';
+            hrUp.style.cursor='pointer';
+            hrDown.style.cursor='pointer';
         }
     }
 })
