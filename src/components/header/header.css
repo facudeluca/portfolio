@@ -1,0 +1,171 @@
+.navbar .container{
+  width: 100%;
+  max-width: none;
+  padding: 1rem 4rem;
+}
+  .header__navbar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .navbar-collapse{
+    justify-content: flex-end;
+  }
+  .container .navbar-logo{
+    font-size: 3rem;
+    font-weight: 900;
+    text-decoration: none;
+    color: var(--text-color);
+    line-height: .7;
+    font-family: "Heebo";
+    transition: text-shadow .5s ease-in-out, color .5s ease-in-out;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+  .navbar-logo:hover{
+    text-shadow: 0px 0px 5px black;
+    color: white;
+  }
+  .navbar-logo:hover #puntos{
+    animation: puntos 0.6s ease-in-out both;
+  }
+  @keyframes puntos {
+    0%{transform:rotate(0);transform-origin: right;}
+    100%{transform:rotate(360deg);transform-origin: right;}
+  }
+  #puntos {
+    color: var(--color-principal);
+    align-self: flex-end;
+    position: absolute;
+    margin-left: .2rem;
+  }
+  .navbar-nav{
+    align-items: center;
+    gap: 2rem;
+  } 
+  .a_nav{
+  font-size: 1.2rem;
+  color: var(--text-color);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .5s ease-in-out;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  }
+  .a_nav .line__link{
+    width: 100%; 
+    height: 2px;
+    background-color: var(--color-principal);
+    position: absolute;
+    transform: translateX(-105px);
+    transition: .5s ease-in-out;
+    box-shadow: 0px 0px 5px var(--color-principal);
+  }
+  .a_nav:hover{
+    color: rgb(214, 214, 214);
+    text-shadow: 0px 0px 5px black;
+  }
+  .a_nav:hover .line__link{
+    transform: translateX(0px);
+  }
+  .nav__bars:focus{
+  box-shadow: none !important;
+  }
+  .nav__bars svg{
+  fill:var(--color-principal);
+  font-size: 2rem;
+  }
+  .navbar-collapse .show{
+    background-color: var(--color-bg);
+    backdrop-filter: blur(5px);
+    width: 100vh;
+    height: 100vh;
+    position: relative;
+
+  }
+  .navbar-nav .nav-link.active{
+    color: var(--text-color) !important;
+  }
+  .navbar-nav .nav-link.active:hover{
+    color: var(--color-principal) !important;
+    text-shadow: 0px 0px 5px black !important;
+  }
+  #changeButton{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-principal);
+    border: 2px solid rgb(22, 22, 22);
+    transition: background-color .5s ease-in-out, filter .2s ease-in-out;
+  }
+  #changeButton:hover{
+    filter: brightness(.5);
+  }
+  #changeButton:focus{
+    box-shadow: none;
+  }
+  #popover-positioned-bottom{
+    background-color: var(--color-bg);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-bg);
+  }
+
+  .popover-arrow{
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  .popover-arrow::before{
+    border: none !important;
+  }
+  .popover-arrow::after{
+    border: none !important;
+  }
+  .popover-header{
+    background-color: var(--color-bg) !important;
+    color: var(--text-color) !important;
+  }
+  .popover-body{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem .5rem!important;
+  }
+  .colorChangeBtn{
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid rgb(22, 22, 22);
+    border-radius: 5px;
+  }
+  .red{
+    background-color: red;
+  }
+  .yellow{
+    background-color: #feda4e;
+  }
+  .lightblue{
+    background-color: rgb(78, 204, 254);
+  }
+  .purple{
+    background-color: rgb(100, 32, 189);
+  }
+  .green{
+    background-color: rgb(133, 206, 24);
+  }
+  .navOverlay{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    position:fixed;
+    border-radius: 50%;
+    transform: translateY(-100%) scale(.5);
+    transition: all .5s ease-in-out;
+    
+  }
+
+  @media screen and (max-width: 750px) {
+    .navbar .container{
+      padding: 1rem 2rem;
+    }
+}

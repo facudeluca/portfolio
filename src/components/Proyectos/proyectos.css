@@ -1,0 +1,106 @@
+#proyectos{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--color-bg);
+    justify-content: center;
+    align-items: center;
+    }
+#wave{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    fill:rgba(32,32,32);
+    filter: drop-shadow(0px 25px 10px rgba(0, 0, 0, 0.5));
+    z-index: 500;
+    pointer-events: none;
+}
+.proyectos__tittle{
+    width: 100%;
+    font-family: "input-sans-narrow", sans-serif;
+    font-weight: 700;
+    top: 10%;
+    font-size: 8vw;
+    z-index: 0;
+    text-align: center;
+    color: transparent;
+    text-shadow: 0px 0px 1px rgba(150, 150, 150, 0.5);
+    background-clip: text;
+}
+.proyectos__tittle span{
+    transition: color .5s ease-in-out;
+    color: transparent;
+    cursor:default;
+}
+#p:hover{
+    color: var(--color-principal);
+}
+#r:hover{
+    color: var(--color-principal);
+}
+#o:hover{
+    color: var(--color-principal);
+}
+#y:hover{
+    color: var(--color-principal);
+}
+#e:hover{
+    color: var(--color-principal);
+}
+#c:hover{
+    color: var(--color-principal);
+}
+#t:hover{
+    color: var(--color-principal);
+}
+#s:hover{
+    color: var(--color-principal);
+}
+
+.proyectos__container{
+    width: 70%;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 50px black;
+    background: var(--color-bg);
+}
+.proyectos__container .flechas{
+    color: var(--color-principal);
+    width: 45px;
+    font-size: 2.5rem;
+    transition: color .5 ease-in-out;
+}
+.proyectos__container button{
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    transition: background-color .5s ease-in-out;
+    z-index: 2;
+    box-shadow: 0px 0px 30px black;
+}
+.proyectos__container button:hover{
+    background-color: rgb(42, 42, 42);
+}
+@media screen and (max-width:1400px) {
+    .proyectos__container{
+        width: 90%;
+    }
+}
+@media screen and (max-width:1200px) {
+    .proyectos__container{
+        height: 480px;
+    }
+    .proyectos__tittle{
+        font-size: 12vw;
+    }
+}
+@media screen and (max-width:750px){
+    .proyectos__container{
+        height: 500px;
+    }
+}

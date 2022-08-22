@@ -1,0 +1,163 @@
+.card{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--text-color);
+}
+.card .front{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    min-height: 300px;
+}
+.card .front:hover .front3{
+    color: var(--color-principal);
+}
+.card .front .front1{
+    margin-left: -400px;
+    margin-bottom: 1rem;
+    pointer-events: fill;
+}
+.card .front .front1 h3 {
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 0.2.4.5;
+    font-family: "input-sans-narrow", sans-serif;
+  }
+.card .front .front2{
+    margin: 0 auto;
+    cursor: default;
+}
+.card .front .front2 h1{
+    position: relative;
+    font-size: 10rem;
+    line-height: 0.8;
+    margin:auto;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    transition: text-shadow 1s ease-in-out;
+    font-family: "Heebo";
+    font-weight: 900;
+    transition: color .5 ease-in-out;
+}
+.card .front .front2 .spanFront{
+    position: absolute;
+    right: 60px;
+    bottom: 55px;
+    transform: rotate(90deg);
+    transition: color .5 ease-in-out;
+    color: var(--color-principal);
+}
+.card .front .front2 .spanFront .frontPunto1 {
+    position: absolute;
+    animation: dot 2s linear infinite ;
+    bottom: -10px;
+    transition: color .5 ease-in-out;
+    right: 10px;
+  }
+  .card .front .front2 .spanFront .frontPunto2 {
+    position: absolute;
+    animation: dot 2s linear infinite .5s;
+    bottom: -10px;
+    transition: color .5 ease-in-out;
+  }
+  @keyframes dot {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    75% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+.card .front .front3{
+    margin-left: 400px;
+    margin-top: 1rem;
+    pointer-events: fill;
+    transition: color .5s ease-in;
+  }
+.card .front .front3 h3{
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 1;
+    font-family: "input-sans-narrow", sans-serif;
+  }
+
+  @media screen and (max-width:1150px){
+    .card{
+        width: 80%;
+    }
+    .card .front .front2 h1{
+        font-size: 8rem
+    }
+    .card .front .front1 h3{
+        font-size: 1.2rem;
+    }
+    .card .front .front3 h3{
+        font-size: 1.2rem;
+    }
+    .card .front .front2 .spanFront{
+        right: 45px;
+        bottom: 45px;
+    }
+  }
+  @media screen and (max-width:750px){
+    .card{
+        width: 90%;
+    }
+    .card .front .front2 h1{
+        font-size: 5rem
+    }
+    .card .front .front1 h3{
+        font-size: 1rem;
+    }
+    .card .front .front1{
+        margin-left: -200px;
+    }
+    .card .front .front3 h3{
+        font-size: 1rem;
+    }
+    .card .front .front3{
+        margin-left: 200px;
+    }
+    .card .front .front2 .spanFront{
+        right: 25px;
+        bottom: 28px;
+    }
+  }
+  @media screen and (max-width:450px){
+    .card .front .front2 h1{
+        font-size: 4rem
+    }
+    .card .front .front1 h3{
+        font-size: 1rem;
+    }
+    .card .front .front1{
+        margin-left: -180px;
+    }
+    .card .front .front3 h3{
+        font-size: 1rem;
+    }
+    .card .front .front3{
+        margin-left: 150px;
+    }
+    .card .front .front2 .spanFront{
+        right: 15px;
+        bottom: 22px;
+    }
+  }

@@ -1,0 +1,89 @@
+.scroll{
+    position: fixed;
+    right: 16px;
+    bottom: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transform: rotate(90deg);
+    font-family: "input-sans-narrow", sans-serif;
+    z-index: 900;
+    color: var(--text-color);
+    pointer-events: none;
+}
+.scroll h3{
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+.scroll .scrollArrowUp{
+    color: var(--color-principal);
+    transition: all .5s ease-in-out;
+    transform: rotate(90deg);
+    animation: arrowup 2s linear infinite;
+}
+.scroll .scrollArrowDown{
+color: var(--color-principal);
+transition: all .5s ease-in-out;
+transform: rotate(-90deg);
+animation: arrowdown 2s linear infinite;
+}
+
+@keyframes arrowup {
+    0%{
+        transform:translateX(0);
+    }
+    50%{
+        transform: translateX(16px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes arrowdown {
+    0%{
+        transform:translateX(0);
+    }
+    50%{
+        transform: translateX(-16px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width:991px) {
+    .scroll{
+        right: -35px;
+    }
+}
+@media screen and (max-width:600px) {
+    .scroll{
+        gap: 0px;
+    }
+    .scroll h3{
+        font-size: .7rem;
+    }
+    @keyframes arrowup {
+        0%{
+            transform:translateX(0);
+        }
+        50%{
+            transform: translateX(5px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    @keyframes arrowdown {
+        0%{
+            transform:translateX(0);
+        }
+        50%{
+            transform: translateX(-5px);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+}

@@ -1,0 +1,77 @@
+#social{
+    position: absolute;
+    bottom: 5%;
+    left: 2rem;
+    font-family: "input-sans-narrow", sans-serif;
+}
+#social ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+}
+#social ul li{
+    list-style: none;
+}
+#social ul li a{
+    position: relative;
+    overflow: hidden;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    width: 120px;
+}
+#social .i{
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    transition: 1s ease-in-out;
+    color: var(--color-principal);
+    background-color: var(--color-bg);
+    z-index: 10;
+}
+#social ul li a .socialspanLine{
+    height: 2px;
+    background-color: var(--color-principal);
+    box-shadow: 0px 0px 5px var(--color-principal);
+    bottom: 0;
+    position: absolute;
+    transform: translateX(-100px); 
+    transition: 1s ease-in .2s;
+}
+#socialEmail .socialspanLine{
+    width: 50%;
+    left: 33%;
+}
+#socialGh .socialspanLine{
+    width: 55%;
+    left: 35%;
+}
+#socialLi .socialspanLine{
+    width: 65%;
+    left: 35%;
+}
+#social ul li a .socialspan p{
+    position: absolute;
+    margin: 0;
+    transform: translateX(-90px);
+    transition: .5s ease-in-out;
+}
+#social ul li a:hover .socialspan p{
+    transform: translateX(10px);
+}
+
+#social ul li a:hover .socialspanLine{
+    transform: translateX(0px);
+}
+
+
+@media screen and (max-width: 750px) {
+    #social{
+        left: 0;
+    }
+}
