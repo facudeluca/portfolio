@@ -189,6 +189,15 @@ font-weight: bold;
     .listaProyectos .card .infoCard .tecnologias h3{
         font-size: .8rem;
     }
+    .proyectos__container button{
+        box-shadow:none !important;
+        background-color: transparent;
+        pointer-events: none;
+    }
+    .proyectos__container .listaProyectos .flechas{
+        font-size: 1.5rem;
+    }
+
 }
 @media screen and (max-height:600px) {
     .proyectos__tittle{

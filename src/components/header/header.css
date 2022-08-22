@@ -60,7 +60,7 @@
     height: 2px;
     background-color: var(--color-principal);
     position: absolute;
-    transform: translateX(-105px);
+    transform: translateX(-110px);
     transition: .5s ease-in-out;
     box-shadow: 0px 0px 5px var(--color-principal);
   }
@@ -162,6 +162,15 @@
     transform: translateY(-100%) scale(.5);
     transition: all .5s ease-in-out;
     
+  }
+  .navBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 32, 32, 0.7);
+    z-index: -1;
+    filter: blur(2px);
+    transition: all .5s ease-in-out;
   }
 
   @media screen and (max-width: 750px) {

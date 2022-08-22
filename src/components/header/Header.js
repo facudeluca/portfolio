@@ -89,6 +89,7 @@ function Header({ color }) {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <div className="navBg" style={{transform: expanded ? 'translateY(-100%) scale(0)':'',backgroundColor: expanded ? 'rgba(0, 0, 0, 0.9)':''}}></div>
     </Navbar>
     <div className="navOverlay" onMouseDown={() => setExpanded(false)} style={{transform: expanded ? 'translateY(0) scale(1)':'', borderRadius: expanded? '0' : ''}}>
 
