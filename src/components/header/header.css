@@ -147,7 +147,7 @@
     background-color: rgb(78, 204, 254);
   }
   .purple{
-    background-color: rgb(100, 32, 189);
+    background-color: rgb(135, 37, 192);
   }
   .green{
     background-color: rgb(133, 206, 24);
@@ -176,5 +176,15 @@
   @media screen and (max-width: 750px) {
     .navbar .container{
       padding: 1rem 2rem;
+    }
+    .popover-body{
+      width: 200px;
+    }
+    .popover-header{
+      text-align: center;
+    }
+    .colorChangeBtn{
+      width: 2rem;
+      height: 2rem;
     }
 }

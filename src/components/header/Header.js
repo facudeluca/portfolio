@@ -78,7 +78,7 @@ function Header({ color }) {
               <button className="colorChangeBtn red" onClick={() => color("red")}></button>
               <button className="colorChangeBtn yellow" onClick={() => color("#feda4e")}></button>
               <button className="colorChangeBtn lightblue" onClick={() => color("rgb(78, 204, 254)")}></button>
-              <button className="colorChangeBtn purple" onClick={() => color("rgb(100, 32, 189)")}></button>
+              <button className="colorChangeBtn purple" onClick={() => color("rgb(135, 37, 192)")}></button>
               <button className="colorChangeBtn green" onClick={() => color("rgb(133, 206, 24)")}></button>
               </Popover.Body>
             </Popover>

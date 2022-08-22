@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState, useEffect, useRef, useCallback } from "react";
 import "./listaProyectos.css";
 import { AiFillHtml5 } from "react-icons/ai";
 import { FaCss3Alt } from "react-icons/fa";
@@ -16,7 +16,7 @@ import galicia from "../../../galicia.png";
 import Tilt from "react-parallax-tilt";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectCoverflow } from "swiper";
+import { Navigation, EffectCoverflow, Pagination } from "swiper";
 import SwiperCore from "swiper/core";
 
 import "swiper/css";
@@ -51,12 +51,21 @@ useEffect(()=>{
   
 
 
-  const navigationPrevRef = React.useRef(null)
-  const navigationNextRef = React.useRef(null)
+  const sliderRef=useRef(null)
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slidePrev();
+  }, []);
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return;
+    sliderRef.current.swiper.slideNext();
+  }, []);
 
   return (
     <div className="listaProyectos">
-    <button ref={navigationPrevRef}><BsChevronCompactLeft className="flechas"/></button>
+    <button  onClick={handlePrev}><BsChevronCompactLeft className="flechas"/></button>
       <Swiper           
             effect={"coverflow"}  
             slidesPerView={lessWidth ? 1 : 3}
@@ -64,7 +73,10 @@ useEffect(()=>{
             loop={true}
             initialSlide={0}
             centeredSlides={true}
-            modules={[EffectCoverflow]}
+            modules={[EffectCoverflow, Pagination]}
+            pagination={{
+              dynamicBullets:true
+            }}
             coverflowEffect={{
               rotate: -20,
               stretch: -250,
@@ -73,13 +85,7 @@ useEffect(()=>{
               slideShadows: false,
               scale:.9
             }}
-            navigation={{
-              prevEl: navigationPrevRef.current,
-              nextEl: navigationNextRef.current}}
-              onBeforeInit={(swiper) => {
-                swiper.params.navigation.prevEl = navigationPrevRef.current;
-                swiper.params.navigation.nextEl = navigationNextRef.current;
-           }}>
+           ref={sliderRef}>
         <SwiperSlide>
         <Tilt
         className="tilt card"
@@ -252,7 +258,7 @@ useEffect(()=>{
       </Tilt>
         </SwiperSlide>
       </Swiper>
-      <button ref={navigationNextRef}><BsChevronCompactRight className="flechas"/></button>
+      <button  onClick={handleNext}><BsChevronCompactRight className="flechas"/></button>
     </div>
   );
 }
