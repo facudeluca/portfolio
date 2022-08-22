@@ -26,6 +26,8 @@ import "swiper/css/navigation";
 
 
 SwiperCore.use([Navigation]);
+   
+
 
 
 function ListaProyectos() {
