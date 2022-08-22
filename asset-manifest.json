@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a060015c.css",
-    "main.js": "/portfolio/static/js/main.34d8542b.js",
+    "main.css": "/portfolio/static/css/main.33383a4a.css",
+    "main.js": "/portfolio/static/js/main.fba56ca8.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/Perfil.jpg": "/portfolio/static/media/Perfil.11e587d448e2cfd2d1a1.jpg",
     "static/media/pastas-damiano.png": "/portfolio/static/media/pastas-damiano.f2b12bbe78cfe4264738.png",
     "static/media/duck.png": "/portfolio/static/media/duck.fa17ef0a46629fa73bb7.png",
     "static/media/galicia.png": "/portfolio/static/media/galicia.657aa1bf461c0779f60c.png",
     "index.html": "/portfolio/index.html",
-    "main.a060015c.css.map": "/portfolio/static/css/main.a060015c.css.map",
-    "main.34d8542b.js.map": "/portfolio/static/js/main.34d8542b.js.map",
+    "main.33383a4a.css.map": "/portfolio/static/css/main.33383a4a.css.map",
+    "main.fba56ca8.js.map": "/portfolio/static/js/main.fba56ca8.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a060015c.css",
-    "static/js/main.34d8542b.js"
+    "static/css/main.33383a4a.css",
+    "static/js/main.fba56ca8.js"
   ]
 }
