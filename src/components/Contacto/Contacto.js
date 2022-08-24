@@ -18,7 +18,10 @@ function Contacto() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    
+    setTimeout(()=>{
+      e.target.reset()
+    }, 2000)
 
     emailjs
       .sendForm(
@@ -34,7 +37,7 @@ function Contacto() {
         }, 2000);
         setTimeout(() => {
           setSmShow(false);
-          
+
         }, 4000);
       })
       .catch((err) => {
