@@ -160,7 +160,8 @@ padding-left: 2rem;
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 2px solid rgb(20, 20, 20);
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.4);
     padding: .5rem 1rem;
     color: var(--text-color);
     margin-bottom: 1rem;
@@ -174,7 +175,9 @@ padding-left: 2rem;
 .form textarea{
     margin-top: 1rem;
     background-color: transparent;
-    border: 1px solid rgb(20, 20, 20);
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.4);
     color: var(--text-color);
     resize: none;
     padding: .5rem 1rem;
@@ -192,7 +195,7 @@ padding-left: 2rem;
 }
 .form textarea:focus{
     outline: none;
-    border-color: var(--color-principal);
+    border: 2px solid var(--color-principal);
 }
 .contenido1{
     display: flex;
@@ -271,9 +274,45 @@ width: auto;
     bottom: 2rem;
     right: 2rem;
 }
-.check{
+.modal-body{
+    position: relative;
+}
+
+.checked{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checked h3{
+    font-size: 1rem;
     color: green;
-    font-size: 2rem;
+}
+.check{
+
+    color: green;
+    font-size: 2.2rem;
+}
+.error{
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    top: 0;
+    right: 0rem;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: red;
+    align-items: center;
+    padding: .8rem;
+}
+.error svg{
+    font-size: 1.5rem;
+}
+.error  h3{
+    text-align: center;
+    font-size: .6rem;
+    width: 80%;
 }
 
 @media screen and (max-width:1200px) {
@@ -317,5 +356,8 @@ width: auto;
         border-left: none;
         margin: 0;
         padding-left: 0;
+    }
+    .contenido1 h2{
+        font-size: 1.5rem;
     }
 }

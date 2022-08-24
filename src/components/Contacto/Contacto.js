@@ -6,6 +6,7 @@ import SocialNav from "../SocialNav/SocialNav";
 import Modal from "react-bootstrap/Modal";
 import Spinner from "react-bootstrap/Spinner";
 import {IoCheckmarkSharp} from "react-icons/io5"
+import {BiErrorCircle} from "react-icons/bi"
 
 function Contacto() {
   const form = useRef();
@@ -13,6 +14,7 @@ function Contacto() {
   const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [errorEmail, setErrorEmail]=useState(true)
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -29,13 +31,18 @@ function Contacto() {
         console.log(result.text);
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 2000);
         setTimeout(() => {
           setSmShow(false);
           
-        }, 2000);
+        }, 4000);
       })
       .catch((err) => {
+        setTimeout(() => {
+          setSmShow(false);
+          
+        }, 2000)
+        setErrorEmail(false)
         console.log(err);
       })
       .finally(() => {
@@ -136,8 +143,11 @@ function Contacto() {
         <Modal.Body>
           {loading?  <Spinner animation="border" role="status">
             <span className="visually-hidden">Loading...</span>
-          </Spinner>: <IoCheckmarkSharp className="check"/>}
-
+          </Spinner>: <div className="checked"><IoCheckmarkSharp className="check"/> <h3>¡ENVIADO!</h3></div> }
+          {errorEmail? '': <div className="error">
+            <BiErrorCircle/>
+            <h3>Ha ocurrido un error</h3>
+          </div>}
         </Modal.Body>
       </Modal>
     </div>

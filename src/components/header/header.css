@@ -188,6 +188,9 @@
     .navbar .container{
       padding: 1rem 2rem;
     }
+    .navbar .navbar-logo{
+      font-size: 2rem;
+    }
     .popover-body{
       width: 200px;
     }
