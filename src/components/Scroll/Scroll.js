@@ -17,7 +17,7 @@ function Scroll({clientHeight}){
            }else{
             setNumScroll(false)
            }
-           if(window.scrollY > clientHeight/2){
+           if(window.scrollY > clientHeight/1.5){
             setCHeight(true)
            }else(
             setCHeight(false)

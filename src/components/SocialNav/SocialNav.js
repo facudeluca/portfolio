@@ -15,7 +15,7 @@ function SocialNav() {
         window.open("https://www.linkedin.com/in/facundo-deluca/")
     }
   return (
-    <nav id="social">
+    <nav className="social socialContact">
       <ul>
         <li>
           <a to='' onClick={onEmailClick}>

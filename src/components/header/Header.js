@@ -7,11 +7,14 @@ import { Link } from "react-scroll";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
-import Tooltip from 'react-bootstrap/Tooltip';
 import { useState } from "react";
+import pdf from "../../CV.pdf"
+
 
 function Header({ color }) {
   
+
+
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -66,6 +69,11 @@ function Header({ color }) {
             >
               <span className="line__link"></span>Contacto
             </Link>
+            <a href={pdf} target="_blank" rel="noopener noreferrer" download="CV.pdf" onClick={() => setExpanded(false)}
+              className="a_nav nav__button"
+            >
+            DESCARGAR CV
+            </a>
             <OverlayTrigger
           trigger="click" 
           key="bottom"

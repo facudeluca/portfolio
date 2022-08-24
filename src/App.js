@@ -6,6 +6,7 @@ import Scroll from './components/Scroll/Scroll';
 import About from './components/about/about';
 import Proyectos from './components/Proyectos/Proyectos';
 import { useEffect, useRef, useState } from 'react';
+import Contacto from './components/Contacto/Contacto';
 
 
 
@@ -30,6 +31,7 @@ function App() {
       <About/>
       <Proyectos/>
       <Scroll clientHeight={divHeight}/>
+      <Contacto/>
     </div>
   );
 }
