@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./contacto.css";
 import emailjs from "@emailjs/browser";
-import { Link } from "react-scroll";
 import SocialNav from "../SocialNav/SocialNav";
 import Modal from "react-bootstrap/Modal";
 import Spinner from "react-bootstrap/Spinner";
@@ -15,7 +14,8 @@ function Contacto() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [errorEmail, setErrorEmail]=useState(true)
-
+  const [validForm, setValidForm]=useState(false)
+  const [haveText, setHaveText]=useState('')
   const sendEmail = (e) => {
     e.preventDefault();
     
@@ -66,6 +66,17 @@ function Contacto() {
     setMessage(event.target.value);
   };
 
+  useEffect(() => {
+    if(haveText != '' && error == false && message != ''){
+      setValidForm(true)
+    } else { 
+      setValidForm(false)
+    }
+  }, [haveText, error, message])
+  
+
+
+
   return (
     <div id="contact">
       <svg viewBox="0 0 1440 320" id="wave" className="wave__up">
@@ -113,14 +124,14 @@ function Contacto() {
               onChange={handleChange}
             />
             <label>Mensaje</label>
-            <textarea name="message" />
+            <textarea name="message" onChange={(event) => setHaveText(event.target.value)} />
             <input
               type="submit"
               value="ENVIAR"
               className="nav__button btn__form"
               style={{
-                opacity: message === "" || error ? ".2" : "1",
-                pointerEvents: message === "" || error ? "none" : "all",
+                opacity: validForm ? "1" : ".2",
+                pointerEvents: validForm ? "all" : "none",
               }}
             />
           </form>

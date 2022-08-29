@@ -221,7 +221,7 @@ useEffect(()=>{
             </div>
             <div
               onClick={() => {
-                window.open("https://facudeluca.github.io/proyectoReact-DeLuca/");
+                window.open("https://distribuidoragalicia.netlify.app/");
               }}
             >
               <IoIosOpen className="i" />
