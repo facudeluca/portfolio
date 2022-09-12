@@ -12,7 +12,7 @@ Este proyecto requiere [NodeJS](https://nodejs.org/) para su ejecución.
 
 ```bash
 git clone https://github.com/facudeluca/proyectoReact-DeLuca
-cd e-commerce
+cd portfolio
 npm install
 npm start
 ```
